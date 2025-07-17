@@ -1,4 +1,4 @@
-# QuickShare - Private Text & File Sharing
+# Clip - Private Text & File Sharing
 
 A simple, lightweight Go web application that provides secure, temporary sharing of text and files with memorable URLs. Perfect for quick, private sharing between devices or people.
 
@@ -42,7 +42,7 @@ go run main.go
 ## 📖 Usage Flow
 
 ### Sharing Text
-1. Go to your QuickShare instance (e.g., `localhost:8000`)
+1. Go to your Clip instance (e.g., `localhost:8000`)
 2. Paste your text in the left panel
 3. Click "Generate Link"
 4. Share the memorable URL (e.g., `localhost:8000/c/swift-river`)

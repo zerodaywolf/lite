@@ -180,7 +180,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuickShare - Private Text & File Sharing</title>
+    <title>Clip - Private Text & File Sharing</title>
     <style>
         * {
             margin: 0;
@@ -437,7 +437,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 </head>
 <body>
     <div class="header">
-        <h1>🚀 QuickShare - Private Sharing</h1>
+        <h1>🚀 Clip - Private Sharing</h1>
         <p>Share text & files with memorable URLs • Auto-expires in 12 hours</p>
     </div>
     
@@ -858,7 +858,7 @@ func clipboardViewHandler(w http.ResponseWriter, r *http.Request) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📋 {{.ID}} - QuickShare</title>
+    <title>📋 {{.ID}} - Clip</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

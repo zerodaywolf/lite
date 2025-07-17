@@ -4,8 +4,8 @@ A collection of small, lightweight services and utilities.
 
 ## Available Services
 
-### 📋 QuickShare
-**Path:** `quickshare/`
+### 📋 Clip
+**Path:** `clip/`
 
 A simple Go web application that provides:
 - **Clipboard functionality** (left panel) - paste and save text like pastebin
@@ -20,7 +20,7 @@ A simple Go web application that provides:
 
 **To run:**
 ```bash
-cd quickshare
+cd clip
 go run main.go
 # Visit http://localhost:8000
 ```
