@@ -1,1 +1,134 @@
 clip/uploads
+# Byte-compiled / optimized / DLL files
+ytdlp-webui/__pycache__/
+ytdlp-webui/*.py[cod]
+ytdlp-webui/*$py.class
+
+# C extensions
+ytdlp-webui/*.so
+
+# Distribution / packaging
+ytdlp-webui/.Python
+ytdlp-webui/build/
+ytdlp-webui/develop-eggs/
+ytdlp-webui/dist/
+ytdlp-webui/downloads/
+ytdlp-webui/eggs/
+ytdlp-webui/.eggs/
+ytdlp-webui/lib/
+ytdlp-webui/lib64/
+ytdlp-webui/parts/
+ytdlp-webui/sdist/
+ytdlp-webui/var/
+ytdlp-webui/wheels/
+ytdlp-webui/share/python-wheels/
+ytdlp-webui/*.egg-info/
+ytdlp-webui/.installed.cfg
+ytdlp-webui/*.egg
+ytdlp-webui/MANIFEST
+
+# PyInstaller
+ytdlp-webui/*.manifest
+ytdlp-webui/*.spec
+
+# Installer logs
+ytdlp-webui/pip-log.txt
+ytdlp-webui/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+ytdlp-webui/htmlcov/
+ytdlp-webui/.tox/
+ytdlp-webui/.nox/
+ytdlp-webui/.coverage
+ytdlp-webui/.coverage.*
+ytdlp-webui/.cache
+ytdlp-webui/nosetests.xml
+ytdlp-webui/coverage.xml
+ytdlp-webui/*.cover
+ytdlp-webui/*.py,cover
+ytdlp-webui/.hypothesis/
+ytdlp-webui/.pytest_cache/
+ytdlp-webui/cover/
+
+# Translations
+ytdlp-webui/*.mo
+ytdlp-webui/*.pot
+
+# Django stuff:
+ytdlp-webui/*.log
+ytdlp-webui/local_settings.py
+ytdlp-webui/db.sqlite3
+ytdlp-webui/db.sqlite3-journal
+
+# Flask stuff:
+ytdlp-webui/instance/
+ytdlp-webui/.webassets-cache
+
+# Scrapy stuff:
+ytdlp-webui/.scrapy
+
+# Sphinx documentation
+ytdlp-webui/docs/_build/
+
+# PyBuilder
+ytdlp-webui/.pybuilder/
+ytdlp-webui/target/
+
+# Jupyter Notebook
+ytdlp-webui/.ipynb_checkpoints
+
+# IPython
+ytdlp-webui/profile_default/
+ytdlp-webui/ipython_config.py
+
+# Environments
+ytdlp-webui/.env
+ytdlp-webui/.venv
+ytdlp-webui/env/
+ytdlp-webui/venv/
+ytdlp-webui/ENV/
+ytdlp-webui/env.bak/
+ytdlp-webui/venv.bak/
+
+# IDEs
+ytdlp-webui/.vscode/
+ytdlp-webui/.idea/
+ytdlp-webui/*.swp
+ytdlp-webui/*.swo
+ytdlp-webui/*~
+
+# OS generated files
+ytdlp-webui/.DS_Store
+ytdlp-webui/.DS_Store?
+ytdlp-webui/._*
+ytdlp-webui/.Spotlight-V100
+ytdlp-webui/.Trashes
+ytdlp-webui/ehthumbs.db
+ytdlp-webui/Thumbs.db
+
+# Project specific
+ytdlp-webui/downloads/
+ytdlp-webui/*.tmp
+ytdlp-webui/security_test*.py
+
+# Docker
+ytdlp-webui/docker-compose.override.yml
+ytdlp-webui/.dockerignore.bak
+
+# Logs
+ytdlp-webui/*.log
+ytdlp-webui/logs/
+
+# mypy
+ytdlp-webui/.mypy_cache/
+ytdlp-webui/.dmypy.json
+ytdlp-webui/dmypy.json
+
+# Pyre type checker
+ytdlp-webui/.pyre/
+
+# pytype static type analyzer
+ytdlp-webui/.pytype/
+
+# Cython debug symbols
+ytdlp-webui/cython_debug/
