@@ -1,4 +1,4 @@
-# Quickies - Small Services Collection
+# lite
 
 A collection of small, lightweight services and utilities.
 
