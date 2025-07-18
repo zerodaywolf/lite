@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: clip
+  name: clip
+  namespace: lite
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: clip
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: clip
+    spec:
+      containers:
+      - image: docker.io/zdwlab/clip:1.0
+        name: clip
+        ports:
+        - containerPort: 8000
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: clip
+  name: clip
+  namespace: lite
+spec:
+  ports:
+  - name: 80-8000
+    port: 80
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: clip
+  type: ClusterIP
+status:
+  loadBalancer: {}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: wolfca-issuer
+  creationTimestamp: null
+  name: clip
+  namespace: lite
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: clip.k8s.zerodaywolf.sh
+    http:
+      paths:
+      - backend:
+          service:
+            name: clip
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - clip.k8s.zerodaywolf.sh
+    secretName: clip-tls
+status:
+  loadBalancer: {}
