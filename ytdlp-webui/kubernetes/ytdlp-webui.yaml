@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ytdlp-webui
+  name: ytdlp-webui
+  namespace: lite
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ytdlp-webui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ytdlp-webui
+    spec:
+      containers:
+      - image: docker.io/zdwlab/ytdlp-webui:1.0
+        name: ytdlp-webui
+        ports:
+        - containerPort: 8000
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ytdlp-webui
+  name: ytdlp-webui
+  namespace: lite
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: ytdlp-webui
+  type: ClusterIP
+status:
+  loadBalancer: {}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: wolfca-issuer
+  creationTimestamp: null
+  name: ytdlp-webui
+  namespace: lite
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: ytdlp.k8s.zerodaywolf.sh
+    http:
+      paths:
+      - backend:
+          service:
+            name: ytdlp-webui
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - ytdlp.k8s.zerodaywolf.sh
+    secretName: ytdlp-webui-tls
+status:
+  loadBalancer: {}

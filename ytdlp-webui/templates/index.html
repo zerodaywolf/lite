@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yt-dlp Web UI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fab fa-youtube"></i> yt-dlp Web UI</h1>
+            <p>Download videos from YouTube and 1900+ other supported sites</p>
+        </header>
+
+        <main>
+            <div class="download-section">
+                <div class="input-group">
+                    <input type="url" id="videoUrl" placeholder="Enter YouTube URL or any supported video URL..." required>
+                    <button id="analyzeBtn" type="button">
+                        <i class="fas fa-search"></i> Analyze
+                    </button>
+                </div>
+
+                <div id="loadingInfo" class="loading hidden">
+                    <i class="fas fa-spinner fa-spin"></i> Analyzing video...
+                </div>
+
+                <div id="videoInfo" class="video-info hidden">
+                    <div class="video-details">
+                        <h3 id="videoTitle"></h3>
+                        <p><strong>Uploader:</strong> <span id="videoUploader"></span></p>
+                        <p><strong>Duration:</strong> <span id="videoDuration"></span></p>
+                    </div>
+
+                    <div class="download-options">
+                        <div class="download-type-selection">
+                            <label>Download Type:</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="downloadType" value="video" checked>
+                                    <span class="radio-label"><i class="fas fa-video"></i> Video</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="downloadType" value="mp3">
+                                    <span class="radio-label"><i class="fas fa-music"></i> MP3 (320kbps)</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="downloadType" value="flac">
+                                    <span class="radio-label"><i class="fas fa-compact-disc"></i> FLAC (Lossless)</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="downloadType" value="m4a">
+                                    <span class="radio-label"><i class="fas fa-file-audio"></i> M4A (High Quality)</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="downloadType" value="audio">
+                                    <span class="radio-label"><i class="fas fa-headphones"></i> Audio (Original)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="format-selection">
+                            <div id="videoFormatSection">
+                                <label for="videoFormatSelect">Video Quality:</label>
+                                <select id="videoFormatSelect">
+                                    <option value="best">Best Quality</option>
+                                </select>
+                            </div>
+                            
+                            <div id="audioFormatSection" class="hidden">
+                                <label for="audioFormatSelect">Audio Quality:</label>
+                                <select id="audioFormatSelect">
+                                    <option value="best">Best Quality</option>
+                                </select>
+                            </div>
+
+                            <div id="mp3FormatSection" class="hidden">
+                                <p class="audio-info mp3-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    MP3 will be converted to maximum quality (320kbps)
+                                </p>
+                            </div>
+
+                            <div id="flacFormatSection" class="hidden">
+                                <p class="audio-info flac-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    FLAC provides lossless audio quality (larger file size)
+                                </p>
+                            </div>
+
+                            <div id="m4aFormatSection" class="hidden">
+                                <p class="audio-info m4a-info">
+                                    <i class="fas fa-info-circle"></i>
+                                    M4A provides excellent quality with smaller file size
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="downloadBtn" type="button" class="download-btn">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+
+                <div id="downloadProgress" class="progress-section hidden">
+                    <h3>Download Progress</h3>
+                    <div class="progress-bar">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+                    <p id="progressText">0%</p>
+                    <div id="downloadStatus"></div>
+                </div>
+            </div>
+
+            <div class="downloads-section">
+                <h2><i class="fas fa-folder-open"></i> Recent Downloads</h2>
+                <button id="refreshBtn" type="button" class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+                <div id="downloadsList" class="downloads-list">
+                    <p class="no-downloads">No completed downloads</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by <a href="https://github.com/yt-dlp/yt-dlp" target="_blank">yt-dlp</a></p>
+        </footer>
+    </div>
+
+    <div id="notification" class="notification hidden"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
